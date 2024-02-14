@@ -1,6 +1,6 @@
 ﻿namespace CourseWork.Models
 {
-    public class Organisation
+    public class Project
     {
         public int Id { get; set; }
         public string? Deadline { get; set; }

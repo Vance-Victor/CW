@@ -1,3 +1,6 @@
+using CourseWork.Models;
+using Microsoft.EntityFrameworkCore;
+
 namespace CourseWork
 {
     public class Program
@@ -5,6 +8,9 @@ namespace CourseWork
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            builder.Services.AddDbContext<OrganisationContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Connection")));
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
